@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" asp-append-version="true" rel="stylesheet" />
+    @await RenderSectionAsync("css", required:false)
+</head>
+<body>
+
+    <div class="container-fluid min-vh-100 d-flex flex-column">
+        @* heder *@
+        <div class="row">
+            <div class="col text-white bg-danger p-5 text-center">
+                @await RenderSectionAsync("HederText", required:false)
+            </div>
+        </div>
+
+
+        @* body *@
+        <div class="row flex-grow-1">
+            @* sidbar *@
+            <div class="col-2 bg-primary">
+                Sidbar
+            </div>
+            <div class="col-10 bg-secondary">
+                @RenderBody()
+            </div>
+            @* main *@
+        </div>
+
+
+        @* footer *@
+        <div class="row">
+            <div class="col text-white bg-danger p-2 text-center">Footer</div>
+        </div>
+
+    </div> 
+
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("script", required:false)
+</body>
+</html>
